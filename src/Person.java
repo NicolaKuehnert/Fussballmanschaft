@@ -1,39 +1,57 @@
 
+import java.util.GregorianCalendar;
 public class Person 
 {
 	
 	protected String name;
 	protected String spitzname;
-	protected Adresse adresse;
-	protected int telnr;
-	protected int day;
-	protected int month;
-	protected int year;
+	protected String adresse;
+	protected String telnr;
+	protected GregorianCalendar birthday;
 	
-	public Person(String name, String spitzname, Adresse adresse, int telnr, int day, int month, int year)
+	public Person(String name, String spitzname, String adresse, String telnr, int day, int month, int year)
 	{
 		this.name = name;
 		this.spitzname = spitzname;
 		this.adresse = adresse;
 		this.telnr = telnr;
-		this.day = day;
-		this.month = month;
-		this.year = year;
+		this.birthday = new GregorianCalendar(day, month, year);
 	}
 	
 	public boolean equals(Person person)
 	{
-		if(name.equals(person.name) && telnr == person.telnr)
+		if(name.equals(person.name) && this.hashCode() == person.hashCode())
 		{
 			return true;
 		}
 		else
 			return false;
 	}
-	//Hier bin ich!
-	public int hashCode()
-	{
-		return 0;
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public String getSpitzname() {
+		return spitzname;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public String getTelnr() {
+		return telnr;
+	}
+
+	public GregorianCalendar getBirthday(){
+		return birthday;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", spitzname=" + spitzname + ", adresse=" + adresse + ", telnr=" + telnr + ", birthday=" + birthday + "]";
 	}
 
 }

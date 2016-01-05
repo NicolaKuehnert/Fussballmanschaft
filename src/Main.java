@@ -3,14 +3,24 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		Person[] listePersonen = new Person[5];
-		Adresse adresse = new Adresse("Musterstraße", 13, 1337, "Musterstadt");
-		listePersonen[0] = new Person("Klaus Müller", "Klausi", adresse, 01371234567, 10, 5, 1980);
-		listePersonen[1] = new Person("Kevin Müller", "Kev", adresse, 01371234567, 20, 7, 1986);
-		listePersonen[2] = new Person("Kevin Müller", "Mucki", adresse, 01371234567, 20, 7, 1986);
+		Liste list = new Liste();
 		
-		System.out.println(listePersonen[0].equals(listePersonen[1]));
-		System.out.println(listePersonen[1].equals(listePersonen[2]));
+		list.sortName();
+		System.out.println("Liste nach Name:\n\n");
+		list.printListe();
+		
+		list.sortSpitz();
+		System.out.println("Liste nach Spitzname:\n\n");
+		list.printListe();
+		
+		list.sortBirthday();
+		System.out.println("Liste nach Geburtstag:\n\n");
+		list.printListe();
+		
+		list.sortTele();
+		System.out.println("Liste nach Telefonnummer:\n\n");
+		list.printListe();
+		
 
 	}
 
